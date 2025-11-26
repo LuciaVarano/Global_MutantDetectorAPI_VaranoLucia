@@ -1,18 +1,24 @@
-FROM eclipse-temurin:21-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine AS builder
 
 WORKDIR /app
 
-# Copiar archivos necesarios
 COPY gradlew .
 COPY gradle gradle
 COPY build.gradle .
 COPY settings.gradle .
+
+RUN chmod +x gradlew
+
 COPY src src
 
-# Dar permisos y construir
-RUN chmod +x ./gradlew && ./gradlew bootJar --no-daemon
+RUN ./gradlew bootJar --no-daemon
+
+FROM eclipse-temurin:21-jre-alpine
+
+WORKDIR /app
+
+COPY --from=builder /app/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
-# Ejecutar la aplicación
-ENTRYPOINT ["java", "-Xms256m", "-Xmx512m", "-jar", "/app/build/libs/mutanteGlobal-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
