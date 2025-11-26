@@ -32,8 +32,7 @@ API REST desarrollada en Spring Boot para detectar si un humano es mutante basá
 7. [Deployment en Render](#-deployment-en-render)
 8. [Validaciones](#-validaciones)
 9. [Complejidad del Algoritmo](#-complejidad-del-algoritmo)
-10. [Contribución](#-contribución)
-11. [Autor](#-autor)
+10. [Autor](#-autor)
 
 
 ## 📋 Descripción del Proyecto
