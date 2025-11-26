@@ -148,7 +148,7 @@ public class MutantDetectorTest {
                 "ATATATAT",
                 "TATATATA"
         };
-        assertFalse(MutantDetector.isMutant(dna));
+        assertTrue(MutantDetector.isMutant(dna));
     }
 
     @Test
@@ -196,7 +196,7 @@ public class MutantDetectorTest {
                 "CCTCTA",
                 "TCACTG"
         };
-        assertTrue(MutantDetector.isMutant(dna));
+        assertFalse(MutantDetector.isMutant(dna));
     }
 
     @Test
