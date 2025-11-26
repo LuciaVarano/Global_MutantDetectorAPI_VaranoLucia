@@ -1,34 +1,18 @@
-LABEL authors="luciaVarano"
+FROM eclipse-temurin:21-jdk-alpine
 
-# Etapa de construcción
-FROM eclipse-temurin:21-jdk-alpine AS build
+WORKDIR /app
 
-WORKDIR /workspace/app
-
-# Copiar archivos de Gradle
+# Copiar archivos necesarios
 COPY gradlew .
 COPY gradle gradle
 COPY build.gradle .
 COPY settings.gradle .
-
-# Dar permisos de ejecución
-RUN chmod +x ./gradlew
-
-# Copiar el código fuente
 COPY src src
 
-# Construir la aplicación
-RUN ./gradlew bootJar --no-daemon
-
-# Etapa de ejecución
-FROM eclipse-temurin:21-jre-alpine
-
-WORKDIR /app
-
-# Copiar el JAR construido
-COPY --from=build /workspace/app/build/libs/*.jar app.jar
+# Dar permisos y construir
+RUN chmod +x ./gradlew && ./gradlew bootJar --no-daemon
 
 EXPOSE 8080
 
-# Configurar la memoria JVM y ejecutar
-ENTRYPOINT ["java", "-Xms256m", "-Xmx512m", "-jar", "app.jar"]
+# Ejecutar la aplicación
+ENTRYPOINT ["java", "-Xms256m", "-Xmx512m", "-jar", "/app/build/libs/mutanteGlobal-0.0.1-SNAPSHOT.jar"]
