@@ -1,7 +1,7 @@
 LABEL authors="luciaVarano"
 
 # Etapa de construcción
-FROM eclipse-temurin:21-jdk-alpine as build
+FROM eclipse-temurin:21-jdk-alpine AS build
 
 WORKDIR /workspace/app
 
@@ -25,8 +25,8 @@ FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
-# Copiar el JAR construido (sin el sufijo -plain)
-COPY --from=build /workspace/app/build/libs/mutanteGlobal-0.0.1-SNAPSHOT.jar app.jar
+# Copiar el JAR construido
+COPY --from=build /workspace/app/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
