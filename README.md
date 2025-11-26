@@ -2,6 +2,9 @@
 
 API REST desarrollada en Spring Boot para detectar si un humano es mutante basándose en su secuencia de ADN. Este proyecto forma parte del examen Global de Desarrollo de Software.
 
+## 🛜 Links Necesarios
+- Render: https://global-mutantdetectorapi-varanolucia.onrender.com/swagger-ui/index.html
+
 ## 📑 Índice
 
 1. [Descripción del Proyecto](#-descripción-del-proyecto)
@@ -35,9 +38,6 @@ API REST desarrollada en Spring Boot para detectar si un humano es mutante basá
 13. [Autor](#-autor)
 14. [Contacto](#-contacto)
 15. [Agradecimientos](#-agradecimientos)
-
-## 🛜 Links Necesarios
-- Render: https://global-mutantdetectorapi-varanolucia.onrender.com/swagger-ui/index.html
 
 ## 📋 Descripción del Proyecto
 
