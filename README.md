@@ -36,6 +36,9 @@ API REST desarrollada en Spring Boot para detectar si un humano es mutante basá
 14. [Contacto](#-contacto)
 15. [Agradecimientos](#-agradecimientos)
 
+## 🛜 Links Necesarios
+- Render: https://global-mutantdetectorapi-varanolucia.onrender.com/swagger-ui/index.html
+
 ## 📋 Descripción del Proyecto
 
 Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar contra los X-Men. Para ello, te ha contratado para que desarrolles un proyecto que detecte si un humano es mutante basándose en su secuencia de ADN.
