@@ -4,6 +4,7 @@ API REST desarrollada en Spring Boot para detectar si un humano es mutante basá
 
 ## 🛜 Links Necesarios
 - Render: https://global-mutantdetectorapi-varanolucia.onrender.com/swagger-ui/index.html
+- Análisis de Cobertura: Se encuentra un archivo .pdf donde se podrá ver el análisis
 
 ## 📑 Índice
 
